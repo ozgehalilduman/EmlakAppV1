@@ -63,4 +63,28 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+  if($stateParams.playlistId==1)
+  {
+    $scope.secilenListe='Reggaexx';
+  }
+  if($stateParams.playlistId==2)
+  {
+    $scope.secilenListe='Chill';
+  }
+  if($stateParams.playlistId==3)
+  {
+    $scope.secilenListe='Dubstep';
+  }
+  if($stateParams.playlistId==4)
+  {
+    $scope.secilenListe='Indie';
+  }
+  if($stateParams.playlistId==5)
+  {
+    $scope.secilenListe='Rap';
+  }
+  if($stateParams.playlistId==6)
+  {
+    $scope.secilenListe='Cowbell';
+  }
 });
