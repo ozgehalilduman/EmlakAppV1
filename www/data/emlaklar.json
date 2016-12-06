@@ -1,0 +1,9 @@
+[
+  {"id":1,"islemtur":"SATILIK","kategori":"KONUT","ad":"bina1"},
+  {"id":2,"islemtur":"SATILIK","kategori":"İŞYERİ","ad":"bina2"},
+  {"id":3,"islemtur":"SATILIK","kategori":"ARSA","ad":"bina3"},
+  {"id":4,"islemtur":"SATILIK","kategori":"ARSA","ad":"bina4"},
+  {"id":5,"islemtur":"KİRALIK","kategori":"ARSA","ad":"bina5"},
+  {"id":6,"islemtur":"KİRALIK","kategori":"ARSA","ad":"bina6"},
+  {"id":7,"islemtur":"KİRALIK","kategori":"BİNA","ad":"bina7"}
+]

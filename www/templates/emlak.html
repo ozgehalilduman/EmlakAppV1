@@ -1,0 +1,11 @@
+<ion-view view-title="EMLAK">
+  <ion-content>
+    <h1>EMLAK</h1>
+    {{islem}}
+    <ion-list>
+      <ion-item ng-repeat="kategori in kategoriler" href="#/app/emlaklistesi/{{islem}}/{{kategori.baslik}}">
+        {{kategori.baslik}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

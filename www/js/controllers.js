@@ -1,13 +1,27 @@
 angular.module('starter.controllers', [])
 //BENİM EKLEDİKLERİ
-.controller('satilikCtrl', function($scope, $stateParams) {
-  $scope.sayfabaslik="SATILIKLAR";
-  $scope.turler = [
-    {baslik:"MUSTAKİL EV",id:1,arkaplan:"ev_bg.jpg",resim:"mustakil.png"},
-    {baslik:"APARTMAN",id:2,arkaplan:"apartman_bg.jpg",resim:"apartman.png"},
-    {baslik:"REZİDANS",id:3,arkaplan:"rezidans_bg.jpg",resim:"rezidans.png"},
-    {baslik:"ARSA",id:4,arkaplan:"arsa_bg.jpg",resim:"tarla2.png"}
-  ];
+.controller('EmlakCtrl',function($scope,Servisler,$stateParams){
+  $scope.kategoriler=Servisler.KategoriGetir($scope);
+  $scope.islem=$stateParams.islemtur;
+})
+.controller('EmlaklistesiCtrl',function($scope,Servisler,$stateParams,$ionicModal){
+  $scope.emlaklar=Servisler.EmlakGetir($scope);
+  $scope.islem=$stateParams.islemtur;
+  $scope.kategori=$stateParams.kategori;
+  $scope.filtrele={'islemtur':$stateParams.islemtur,'kategori':$stateParams.kategori}
+  //MODAL KISMI
+  $ionicModal.fromTemplateUrl('templates/emlakdetay.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  $scope.emlakModalKapat = function() {
+    $scope.modal.hide();
+  };
+  $scope.emlakModalAc = function(emlak) {
+    $scope.modal.show();
+    $scope.secilenEmlak=emlak;
+  };
 })
 //ORJİNALLER
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
@@ -63,28 +77,4 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
-  if($stateParams.playlistId==1)
-  {
-    $scope.secilenListe='Reggaexx';
-  }
-  if($stateParams.playlistId==2)
-  {
-    $scope.secilenListe='Chill';
-  }
-  if($stateParams.playlistId==3)
-  {
-    $scope.secilenListe='Dubstep';
-  }
-  if($stateParams.playlistId==4)
-  {
-    $scope.secilenListe='Indie';
-  }
-  if($stateParams.playlistId==5)
-  {
-    $scope.secilenListe='Rap';
-  }
-  if($stateParams.playlistId==6)
-  {
-    $scope.secilenListe='Cowbell';
-  }
 });
